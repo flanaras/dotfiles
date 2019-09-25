@@ -2,6 +2,16 @@
 
 A repository to host my dotfiles
 
+## Installation
+
+To deploy any of the dotfiles use:
+
+```
+stow -t ~/ folder-to-deploy
+```
+
+Assuming that dotfiles' parent is not ~/
+
 ## Vim specific
 
 User information is not present in the gitconfig.
