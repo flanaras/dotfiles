@@ -1,5 +1,3 @@
-[user]
-	name = Philip Lanaras
 [alias]
 	network = log --all --graph --decorate --oneline
 	fa = fetch --all
