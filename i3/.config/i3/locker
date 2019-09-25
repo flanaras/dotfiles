@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# i3lock blurred screen inspired by /u/patopop007 and the blog post
+# http://plankenau.com/blog/post-10/gaussianlock
+
+# Timings are on an Intel i7-2630QM @ 2.00GHz
+
+# Dependencies:
+# imagemagick
+# i3lock
+# scrot (optional but default)
+
+# mode list
+# * 1 = screenshot
+# * 2 = random background
+
+mode=2
+
+if [ $mode -eq 1 ]; then
+	IMAGE=/tmp/i3lock.png
+	SCREENSHOT="scrot $IMAGE" # 0.46s
+
+	# All options are here: http://www.imagemagick.org/Usage/blur/#blur_args
+	#BLURTYPE="0x5" # 7.52s
+	BLURTYPE="0x4" # 
+	#BLURTYPE="0x2" # 4.39s
+	#BLURTYPE="5x2" # 3.80s
+	#BLURTYPE="2x8" # 2.90s
+	#BLURTYPE="2x3" # 2.92s
+
+	# Get the screenshot, add the blur and lock the screen with it
+	$SCREENSHOT
+	convert $IMAGE -blur $BLURTYPE $IMAGE
+fi
+
+if [ $mode -eq 2 ]; then
+	path=~/Documents/lock-pack
+	name=`ls $path | shuf -n 1`
+
+	IMAGE=$path/$name
+fi
+
+
+## https://faq.i3wm.org/question/5654/how-can-i-disable-notifications-when-the-screen-locks-and-enable-them-again-when-unlocking/index.html
+# Change keyboard to en-us
+ibus engine xkb:us::eng
+
+# Suspend message display
+pkill -u "$USER" -USR1 dunst
+
+i3lock -i $IMAGE
+
+# Resume message display
+pkill -u "$USER" -USR2 dunst
+
+# Screenshot clean up
+if [ $mode -eq 1 ]; then
+	rm $IMAGE
+fi

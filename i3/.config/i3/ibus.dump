@@ -1,0 +1,13 @@
+[general]
+engines-order=['xkb:us::eng', 'xkb:gr::gre', 'xkb:se::swe']
+use-system-keyboard-layout=false
+preload-engines=['xkb:us::eng', 'xkb:gr::gre', 'xkb:se::swe']
+version='1.5.17'
+
+[general/hotkey]
+triggers=['<Alt>space']
+
+[panel]
+custom-font='Roboto Slab Bold Italic 10'
+show=2
+use-custom-font=true
