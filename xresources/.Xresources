@@ -1,0 +1,159 @@
+!XTerm*faceName: Bitstream Vera Serif Mono
+!XTerm*faceName: inconsolata
+!XTerm*faceName: Inconsolata Bold
+!XTerm*faceName: Inconsolata Regular
+!UXTerm*faceName: Roboto Regular
+!UXTerm*vt100*geometry: 180x60
+!URxvt.font: xft:Inconsolata:size=12
+!URxvt.font: -*-inconsolata-*--normal--15-140-75-75-c-90-iso8859-1
+!URxvt.font: xft:Droid Sans Mono:pixelsize=13
+!URxvt.font: xft:Roboto Mono Light:pixelsize=13
+!URxvt.font: xft:inconsolata:pixelsize=15, xft:dejavu sans mono:pixelsize=13
+URxvt*termName: rxvt-unicode-256color
+URxvt.scrollBar: false
+URxvt.intensityStyles: false
+URxvt.perl-ext-common: selection-to-clipboard
+URxvt*saveLines: 16384
+UXTerm*faceSize: 10
+UXTerm*faceName: Bitstream Vera Serif Mono
+UXTerm*saveLines: 16384
+UXTerm*loginShell: true
+UXTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+UXTerm*termName: uxterm-256color
+UXTerm*eightBitInput: false
+*renderFont: true
+UXTerm.vt100.selectToClipboard: true
+UXTerm.vt100.scrollbar.width: 6
+*font: xft:inconsolata:pixelsize=17, xft:dejavu sans mono:pixelsize=13, xft:FontAwesome:style=Regular:size=8
+!*font: xft:inconsolata:pixelsize=15, xft:dejavu sans mono:pixelsize=13, xft:FontAwesome:style=Regular:size=8
+
+Xft.dpi: 90
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+!BLK Cursor
+#define _color0        #2E3436
+#define _color8        #555753
+!RED Tag
+#define _color1        #CC0000
+#define _color9        #EF2929
+!GRN SpecialKey
+#define _color2        #4E9A06
+#define _color10       #8AE234
+!YEL Keyword
+#define _color3        #C4A000
+#define _color11       #FCE94F
+!BLU Number
+#define _color4        #3465A4
+#define _color12       #729FCF
+!MAG Precondit
+#define _color5        #75507B
+#define _color13       #AD7FA8
+!CYN Float
+#define _color6        #06989A
+#define _color14       #34E2E2
+!WHT Search
+#define _color7        #D3D7CF
+#define _color15       #EEEEEC
+!FMT Include, StatusLine, ErrorMsg
+#define _colorBD       _color0
+#define _colorUL       _color0
+#define _colorIT       _color0
+!TXT Normal, Normal, Cursor
+#define _foreground    #000000
+#define _background    #ffffff
+#define _cursorColor   #000000
+
+*color0         : _color0
+*color1         : _color1
+*color2         : _color2
+*color3         : _color3
+*color4         : _color4
+*color5         : _color5
+*color6         : _color6
+*color7         : _color7
+*color8         : _color8
+*color9         : _color9
+*color10        : _color10
+*color11        : _color11
+*color12        : _color12
+*color13        : _color13
+*color14        : _color14
+*color15        : _color15
+*colorBD        : _colorBD
+*colorIT        : _colorIT
+*colorUL        : _colorUL
+*foreground     : _foreground
+*background     : _background
+*cursorColor    : _cursorColor
+
+!URxvt*color0         : _color0
+!URxvt*color1         : _color1
+!URxvt*color2         : _color2
+!URxvt*color3         : _color3
+!URxvt*color4         : _color4
+!URxvt*color5         : _color5
+!URxvt*color6         : _color6
+!URxvt*color7         : _color7
+!URxvt*color8         : _color8
+!URxvt*color9         : _color9
+!URxvt*color10        : _color10
+!URxvt*color11        : _color11
+!URxvt*color12        : _color12
+!URxvt*color13        : _color13
+!URxvt*color14        : _color14
+!URxvt*color15        : _color15
+!URxvt*colorBD        : _colorBD
+!URxvt*colorIT        : _colorIT
+!URxvt*colorUL        : _colorUL
+!URxvt*foreground     : _foreground
+!URxvt*background     : _background
+!URxvt*cursorColor    : _cursorColor
+!XTerm*color0         : _color0
+!XTerm*color1         : _color1
+!XTerm*color2         : _color2
+!XTerm*color3         : _color3
+!XTerm*color4         : _color4
+!XTerm*color5         : _color5
+!XTerm*color6         : _color6
+!XTerm*color7         : _color7
+!XTerm*color8         : _color8
+!XTerm*color9         : _color9
+!XTerm*color10        : _color10
+!XTerm*color11        : _color11
+!XTerm*color12        : _color12
+!XTerm*color13        : _color13
+!XTerm*color14        : _color14
+!XTerm*color15        : _color15
+!XTerm*colorBD        : _colorBD
+!XTerm*colorIT        : _colorIT
+!XTerm*colorUL        : _colorUL
+!XTerm*foreground     : _foreground
+!XTerm*background     : _background
+!XTerm*cursorColor    : _cursorColor
+!UXTerm*color0         : _color0
+!UXTerm*color1         : _color1
+!UXTerm*color2         : _color2
+!UXTerm*color3         : _color3
+!UXTerm*color4         : _color4
+!UXTerm*color5         : _color5
+!UXTerm*color6         : _color6
+!UXTerm*color7         : _color7
+!UXTerm*color8         : _color8
+!UXTerm*color9         : _color9
+!UXTerm*color10        : _color10
+!UXTerm*color11        : _color11
+!UXTerm*color12        : _color12
+!UXTerm*color13        : _color13
+!UXTerm*color14        : _color14
+!UXTerm*color15        : _color15
+!UXTerm*colorBD        : _colorBD
+!UXTerm*colorIT        : _colorIT
+!UXTerm*colorUL        : _colorUL
+!UXTerm*foreground     : _foreground
+!UXTerm*background     : _background
+!UXTerm*cursorColor    : _cursorColor
