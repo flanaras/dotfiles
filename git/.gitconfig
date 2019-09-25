@@ -1,0 +1,10 @@
+[user]
+	name = Philip Lanaras
+[alias]
+	network = log --all --graph --decorate --oneline
+	fa = fetch --all
+	cm = commit -m
+	s = status
+	aa = add .
+	ai = add -i
+	co = checkout
