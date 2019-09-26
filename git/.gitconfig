@@ -6,3 +6,4 @@
 	aa = add .
 	ai = add -i
 	co = checkout
+	db = branch -d
