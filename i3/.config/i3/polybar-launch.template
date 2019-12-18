@@ -5,4 +5,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 polybar mybar &
 
+#export MONITOR="DP-1-2-8"
+#polybar mybar &
+
+#export MONITOR="DP-1-2-1"
+#polybar mybar &
+
 echo "Bars launched..."
