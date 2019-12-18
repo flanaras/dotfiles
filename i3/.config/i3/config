@@ -148,8 +148,8 @@ bindsym $mod+Shift+grave move container to workspace $ws10
 set $s_builtin eDP-1
 set $s_primary $s_builtin
 set $s_secondary $s_builtin
-# set $s_primary DP-1-2
-# set $s_secondary DP-1-1
+# set $s_primary DP-1-2-8
+# set $s_secondary DP-1-2-1
 
 workspace $ws1 output $s_primary
 workspace $ws2 output $s_primary
