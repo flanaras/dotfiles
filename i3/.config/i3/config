@@ -176,15 +176,13 @@ workspace $ws10 output $s_builtin
 
 for_window [class="^.*"] border pixel 1
 
-assign [class="Gnome-terminal"] $ws1
-assign [class="*xterm"] $ws1
+#assign [class="Gnome-terminal"] $ws1
+#assign [class="*xterm"] $ws1
 assign [class="Firefox"] $ws2
-assign [class="jetbrains-idea"] $ws4
-assign [class="jetbrains-clion"] $ws4
+assign [class="Mattermost"] $ws3
+assign [class="jetbrains*"] $ws4
 assign [class="Opera"] $ws6
 assign [class="ViberPC"] $ws6
-assign [class="Slack"] $ws6
-assign [class="Whatsie"] $ws6
 assign [class="Gnome-pomodoro"] $ws7
 assign [class="Thunderbird"] $ws8
 assign [class="VirtualBox"] $ws9
@@ -276,12 +274,11 @@ exec compton --backend glx --vsync opengl-mswc -b
 exec ~/tools/dropbox-filesystem-fix/dropbox_start.py
 exec thunderbird
 exec spotify
-exec slack
+exec mattermost-desktop
 exec opera
 exec xautolock -detectsleep -time 5 -locker "~/.config/i3/locker" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 #exec gnome-pomodoro
 #exec viber
-#exec whatsie
 
 # disable beep sound
 exec_always xset -b
