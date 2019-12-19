@@ -3,12 +3,15 @@ killall -q polybar
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-polybar mybar &
 
+# Main screen for system tray
 #export MONITOR="DP-1-2-8"
 #polybar mybar &
 
 #export MONITOR="DP-1-2-1"
 #polybar mybar &
+
+export MONITOR=
+polybar mybar &
 
 echo "Bars launched..."
