@@ -311,7 +311,8 @@ exec_always ~/.config/polybar/polybar-launch
 exec_always numlockx on
 
 # swap super with alt
-exec_always "sleep 1; setxkbmap -option caps:swapescape -option altwin:swap_alt_win"
+#exec_always "sleep 1; setxkbmap -option caps:swapescape -option altwin:swap_alt_win"
+exec_always "sleep 1; setxkbmap -option altwin:swap_alt_win"
 
 # Open nautilus
 bindsym Mod1+e exec nautilus ~
