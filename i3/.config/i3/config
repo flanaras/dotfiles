@@ -229,6 +229,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Handle floating windows with $mod + (right | left) mouse click
+floating_modifier $mod
 
 set $transparent #00000000
 
