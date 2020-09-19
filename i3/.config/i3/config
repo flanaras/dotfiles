@@ -181,17 +181,16 @@ exec_always i3-msg "workspace $ws12, move workspace to output $s_secondary"
 
 for_window [class="^.*"] border pixel 1
 
-#assign [class="Gnome-terminal"] $ws1
-#assign [class="*xterm"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Mattermost"] $ws3
 assign [class="jetbrains*"] $ws4
+assign [class="Google-chrome"] $ws5
+assign [class="DBeaver"] $ws5
 assign [class="Opera"] $ws6
 assign [class="ViberPC"] $ws6
 assign [class="Gnome-pomodoro"] $ws7
 assign [class="Thunderbird"] $ws8
 assign [class="VirtualBox"] $ws9
-assign [class="Google-chrome"] $ws10
 
 for_window [class="^Spotify$"] border pixel 0
 for_window [class="^Spotify$"] move to workspace $ws10
