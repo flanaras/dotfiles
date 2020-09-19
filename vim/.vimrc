@@ -1,4 +1,3 @@
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
@@ -35,3 +34,5 @@ set expandtab
 vnoremap <C-c> "+y
 inoremap <C-v> <ESC>"+pa
 set cindent
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
