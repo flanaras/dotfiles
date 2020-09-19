@@ -275,6 +275,9 @@ bindsym --release $mod+Print exec flameshot gui
 # apply background picture
 exec_always feh --bg-fill ~/Documents/bg.jpg
 
+exec_always xfce4-power-manager --no-daemon --restart
+exec nm-applet
+
 # fix tearing
 exec compton --backend glx --vsync opengl-mswc -b
 
