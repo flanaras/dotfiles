@@ -7,3 +7,9 @@ function fish_greeting
 end
 
 funcsave fish_greeting
+
+# forgit https://github.com/wfxr/forgit
+source (cat ~/.config/fish/functions/forgit.plugin.fish | psub)
+set -x FORGIT_GI_REPO_LOCAL $HOME/tools/gitignore
+set -x FORGIT_GI_TEMPLATES $HOME/tools/gitignore/templates
+set -x FORGIT_COPY_CMD 'xclip -i -sel p -f | xclip -i -sel c'
