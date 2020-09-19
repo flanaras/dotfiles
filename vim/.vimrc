@@ -12,8 +12,9 @@ set showcmd " show keys pressed
 set cul " highlight current line
 hi CursorLine term=none cterm=none ctermbg=15 " style for line selected
 set mouse=a " do not select the numbers while selected text
-set tabstop=3
-set shiftwidth=3
+set tabstop=4
+set shiftwidth=4
+set expandtab
 vnoremap <C-c> "+y
 inoremap <C-v> <ESC>"+pa
 set cindent
