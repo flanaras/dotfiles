@@ -327,3 +327,6 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer $audio_device set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer $audio_device set Master 2dB- unmute
 #bindsym XF86AudioMute exec --no-startup-id "amixer -q $audio_device set Master toggle && amixer $audio_device set Speaker+LO 100% && amixer $audio_device set Headphone 100% && amixer $audio_device set Headphone on"
+
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
