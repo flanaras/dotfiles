@@ -5,6 +5,7 @@
 	fo = fetch origin
 	fu = fetch upstream
 	pum = pull upstream master
+	ppm = "!f() { git pum && git push origin master; }; f"
 	cm = commit -m
 	s = status
 	a = add
@@ -13,3 +14,4 @@
 	co = checkout
 	db = branch -d
 	d = diff
+	rpou = remote prune origin upstream
