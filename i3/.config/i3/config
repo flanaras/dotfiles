@@ -292,8 +292,10 @@ exec_always xset s off
 # disable all finger touches
 #exec_always synclient MaxTapTime=0
 exec_always xinput set-prop 12 "libinput Tapping Enabled" 0
+exec_always xinput set-prop 13 "libinput Tapping Enabled" 0
 # disable natural scroll
 exec_always xinput set-prop 12 "libinput Natural Scrolling Enabled" 0
+exec_always xinput set-prop 13 "libinput Natural Scrolling Enabled" 0
 #exec_always synclient set
 exec_always "dconf reset -f /desktop/ibus/ && dconf load /desktop/ibus/ < ~/.config/i3/ibus.dump"
 exec_always ~/.config/polybar/polybar-launch
