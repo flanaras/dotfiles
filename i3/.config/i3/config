@@ -162,21 +162,22 @@ workspace $ws4 output $s_primary
 workspace $ws5 output $s_primary
 workspace $ws6 output $s_builtin
 workspace $ws7 output $s_secondary
-workspace $ws8 output $s_secondary
+workspace $ws8 output $s_secondary 
 workspace $ws9 output $s_primary
 workspace $ws10 output $s_builtin
+workspace $ws12 output $s_secondary
 
-# exec_always i3-msg "workspace $ws1, move workspace to output $s_primary"
-# exec_always i3-msg "workspace $ws2, move workspace to output $s_primary"
-# exec_always i3-msg "workspace $ws3, move workspace to output $s_secondary"
-# exec_always i3-msg "workspace $ws4, move workspace to output $s_primary"
-# exec_always i3-msg "workspace $ws5, move workspace to output $s_primary"
-# exec_always i3-msg "workspace $ws6, move workspace to output $s_builtin"
-# exec_always i3-msg "workspace $ws7, move workspace to output $s_secondary"
-# exec_always i3-msg "workspace $ws8, move workspace to output $s_secondary"
-# exec_always i3-msg "workspace $ws9, move workspace to output $s_primary"
-# exec_always i3-msg "workspace $ws10, move workspace to output $s_builtin"
-
+exec_always i3-msg "workspace $ws1, move workspace to output $s_primary"
+exec_always i3-msg "workspace $ws2, move workspace to output $s_primary"
+exec_always i3-msg "workspace $ws3, move workspace to output $s_secondary"
+exec_always i3-msg "workspace $ws4, move workspace to output $s_primary"
+exec_always i3-msg "workspace $ws5, move workspace to output $s_primary"
+exec_always i3-msg "workspace $ws6, move workspace to output $s_builtin"
+exec_always i3-msg "workspace $ws7, move workspace to output $s_secondary"
+exec_always i3-msg "workspace $ws8, move workspace to output $s_secondary"
+exec_always i4-msg "workspace $ws9, move workspace to output $s_primary"
+exec_always i3-msg "workspace $ws10, move workspace to output $s_builtin"
+exec_always i3-msg "workspace $ws12, move workspace to output $s_secondary"
 
 for_window [class="^.*"] border pixel 1
 
