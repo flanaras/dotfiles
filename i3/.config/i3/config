@@ -296,6 +296,8 @@ exec_always xinput set-prop 12 "libinput Natural Scrolling Enabled" 0
 #exec_always synclient set
 exec_always "dconf reset -f /desktop/ibus/ && dconf load /desktop/ibus/ < ~/.config/i3/ibus.dump"
 exec_always ~/.config/polybar/polybar-launch
+# enable numlock
+exec_always numlockx on
 
 # swap super with alt
 exec_always "sleep 1; setxkbmap -option caps:swapescape -option altwin:swap_alt_win"
