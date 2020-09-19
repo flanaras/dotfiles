@@ -12,9 +12,9 @@ function fish_prompt
     set cwd (prompt_pwd)
   end
 
-  set -l fish     "⋊>"
+  set -l fish     ">"
   set -l me       " "(whoami)
-  set -l host     " "(hostname)
+  set -l host     ":"(hostname)
   set -l ahead    "↑"
   set -l behind   "↓"
   set -l diverged "⥄ "
@@ -49,7 +49,7 @@ function fish_prompt
       echo -n -s (git_ahead $ahead $behind $diverged $none)
     end
   else
-    echo -n -s " " $directory_color $cwd $normal_color
+    echo -n -s " " $directory_color $cwd ">" $normal_color
   end
 
   echo -n -s " "

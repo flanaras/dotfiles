@@ -2,6 +2,8 @@ set -x LS_COLORS "no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40
 
 set -gx PATH $HOME/bin $PATH
 
+bass source '/usr/lib64/google-cloud-sdk/completion.bash.inc'
+
 function fish_greeting
         fortune -a | cowsay -f default -W 68
 end
