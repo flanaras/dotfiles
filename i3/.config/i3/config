@@ -270,6 +270,7 @@ bindsym $mod+Mod1+s exec systemctl suspend
 bindsym $mod+Mod1+p exec systemctl poweroff
 bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
 bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/'
+bindsym --release $mod+Print exec flameshot gui
 
 exec_always feh --bg-fill ~/Documents/bg.jpg
 
