@@ -280,7 +280,7 @@ exec compton --backend glx --vsync opengl-mswc -b
 # Startup programs
 exec ~/tools/dropbox-filesystem-fix/dropbox_start.py
 exec thunderbird
-exec spotify
+exec sleep 30; spotify
 exec mattermost-desktop
 exec opera
 exec xautolock -detectsleep -time 5 -locker "~/.config/i3/locker" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
