@@ -22,3 +22,10 @@ Create ~/.config/git/config and add name and email information.
 	name = Filippos Lanaras
 	email = my@email.com
 ```
+
+## Tilix
+
+For `tilix` don't use stow, use dconf instead.
+
+- `dconf dump /com/gexperts/Terminix/ > terminix.dconf`
+- `dconf load /com/gexperts/Terminix/ < terminix.dconf`
