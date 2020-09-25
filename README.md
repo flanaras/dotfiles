@@ -19,6 +19,6 @@ Create ~/.config/git/config and add name and email information.
 
 ```
 [user]
-	name = Philip Lanaras
+	name = Filippos Lanaras
 	email = my@email.com
 ```
