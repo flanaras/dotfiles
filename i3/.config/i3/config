@@ -287,7 +287,7 @@ exec protonmail-bridge --noninteractive
 exec compton --backend glx --vsync opengl-mswc -b
 
 # Startup programs
-exec ~/tools/dropbox-filesystem-fix/dropbox_start.py
+exec dropbox start
 exec thunderbird
 exec sleep 30; spotify
 exec mattermost-desktop
