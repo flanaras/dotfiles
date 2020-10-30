@@ -325,6 +325,9 @@ bindsym XF86MonBrightnessUp exec light -A 3
 bindsym XF86MonBrightnessDown exec light -U 3 
 
 # Audio
+bindsym $mod+s exec ~/.config/i3/spotify-selector
+bindsym $mod+o exec ~/.config/i3/music-selector
+
 set $audio_device -D default
 #set $audio_device -c 1
 
