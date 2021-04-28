@@ -15,6 +15,9 @@ Plug 'elzr/vim-json'
 
 call plug#end()
 
+"https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 set fileformat=unix
 set spell spelllang=en_gb
 set incsearch
