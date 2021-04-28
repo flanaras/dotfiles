@@ -18,3 +18,5 @@
 [commit]
 	verbose = true
     template = ~/.gitmessage
+[core]
+	hooksPath = ~/.githooks/
