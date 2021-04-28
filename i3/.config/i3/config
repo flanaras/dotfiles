@@ -182,6 +182,7 @@ exec_always i3-msg "workspace $ws12, move workspace to output $s_secondary"
 for_window [class="^.*"] border pixel 1
 
 assign [class="Firefox"] $ws2
+assign [class="Navigator"] $ws2
 assign [class="Mattermost"] $ws3
 assign [class="jetbrains*"] $ws4
 assign [class="Google-chrome"] $ws5
