@@ -274,8 +274,8 @@ bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
 bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/'
 bindsym --release $mod+Print exec flameshot gui
 bindsym $mod+Shift+d exec ~/.screenlayout/smart-dock.sh 
-bindsym $mod+Shift+F10 exec ~/.screenlayout/built-in-off.sh
-bindsym $mod+Shift+F11 exec ~/.screenlayout/built-in-only.sh 
+bindsym $mod+Mod1+F10 exec ~/.screenlayout/built-in-off.sh
+bindsym $mod+Mod1+F11 exec ~/.screenlayout/built-in-only.sh 
 
 # apply background picture
 exec_always feh --bg-fill ~/Documents/bg.jpg
