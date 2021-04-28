@@ -82,7 +82,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -182,12 +182,14 @@ exec_always i3-msg "workspace $ws12, move workspace to output $s_secondary"
 for_window [class="^.*"] border pixel 1
 
 assign [class="Firefox"] $ws2
+assign [class="Navigator"] $ws2
 assign [class="Mattermost"] $ws3
 assign [class="jetbrains*"] $ws4
 assign [class="Google-chrome"] $ws5
 assign [class="DBeaver"] $ws5
 assign [class="Opera"] $ws6
 assign [class="ViberPC"] $ws6
+assign [class="Signal"] $ws6
 assign [class="Gnome-pomodoro"] $ws7
 assign [class="Thunderbird"] $ws8
 assign [class="VirtualBox"] $ws9
@@ -272,9 +274,10 @@ bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
 bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/'
 bindsym --release $mod+Print exec flameshot gui
 bindsym $mod+Shift+d exec ~/.screenlayout/smart-dock.sh 
-bindsym $mod+Shift+F10 exec ~/.screenlayout/built-in-off.sh
-bindsym $mod+Shift+F11 exec ~/.screenlayout/built-in-only.sh 
+bindsym $mod+Mod1+F10 exec ~/.screenlayout/built-in-off.sh
+bindsym $mod+Mod1+F11 exec ~/.screenlayout/built-in-only.sh 
 
+bindsym $mod+u exec tilix -e ~/tools/openSUSE-plug-n-play/updaters/update-all
 # apply background picture
 exec_always feh --bg-fill ~/Documents/bg.jpg
 
@@ -288,9 +291,11 @@ exec compton --backend glx --vsync opengl-mswc -b
 # Startup programs
 exec dropbox start
 exec thunderbird
-exec sleep 30; spotify
+exec sleep 10; spotify
 exec mattermost-desktop
 exec opera
+exec /opt/viber/Viber
+exec singal-desktop
 exec xautolock -detectsleep -time 5 -locker "~/.config/i3/locker" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # disable beep sound
