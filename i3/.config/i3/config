@@ -291,7 +291,7 @@ exec compton --backend glx --vsync opengl-mswc -b
 # Startup programs
 exec dropbox start
 exec thunderbird
-exec sleep 30; spotify
+exec sleep 10; spotify
 exec mattermost-desktop
 exec opera
 exec /opt/viber/Viber
