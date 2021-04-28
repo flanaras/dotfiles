@@ -24,8 +24,8 @@ UXTerm*eightBitInput: false
 *renderFont: true
 UXTerm.vt100.selectToClipboard: true
 UXTerm.vt100.scrollbar.width: 6
-*font: xft:inconsolata:pixelsize=17, xft:dejavu sans mono:pixelsize=13, xft:FontAwesome:style=Regular:size=8
-!*font: xft:inconsolata:pixelsize=15, xft:dejavu sans mono:pixelsize=13, xft:FontAwesome:style=Regular:size=8
+!*font: xft:inconsolata:pixelsize=17, xft:dejavu sans mono:pixelsize=13, xft:FontAwesome:style=Regular:size=8
+*font: xft:Inconsolata Nerd Font Mono:pixelsize=15, xft:DejaVuSansMono Nerd Font Mono:pixelsize=12
 
 Xft.dpi: 90
 Xft.antialias: true
