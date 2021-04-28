@@ -277,6 +277,7 @@ bindsym $mod+Shift+d exec ~/.screenlayout/smart-dock.sh
 bindsym $mod+Mod1+F10 exec ~/.screenlayout/built-in-off.sh
 bindsym $mod+Mod1+F11 exec ~/.screenlayout/built-in-only.sh 
 
+bindsym $mod+u exec tilix -e ~/tools/openSUSE-plug-n-play/updaters/update-all
 # apply background picture
 exec_always feh --bg-fill ~/Documents/bg.jpg
 
