@@ -15,3 +15,8 @@
 	db = branch -d
 	d = diff
 	rpou = remote prune origin upstream
+[commit]
+	verbose = true
+    template = ~/.gitmessage
+[core]
+	hooksPath = ~/.githooks/
