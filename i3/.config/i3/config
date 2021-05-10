@@ -296,7 +296,7 @@ exec sleep 10; spotify
 exec mattermost-desktop
 exec opera
 exec /opt/viber/Viber
-exec singal-desktop
+exec signal-desktop
 exec xautolock -detectsleep -time 5 -locker "~/.config/i3/locker" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # disable beep sound
