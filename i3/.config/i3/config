@@ -318,6 +318,9 @@ exec_always ~/.config/polybar/polybar-launch
 # enable numlock
 exec_always numlockx on
 
+# fix docker failing to resolve dns of first execution
+exec docker pull alpine
+
 # swap super with alt
 #exec_always "sleep 1; setxkbmap -option caps:swapescape -option altwin:swap_alt_win"
 exec_always "sleep 1; setxkbmap -option altwin:swap_alt_win"
