@@ -1,7 +1,7 @@
 [general]
-engines-order=['xkb:us::eng', 'xkb:gr::gre', 'xkb:se::swe']
+engines-order=['xkb:us::eng', 'xkb:gr::ell', 'xkb:se::swe']
 use-system-keyboard-layout=false
-preload-engines=['xkb:us::eng', 'xkb:gr::gre', 'xkb:se::swe']
+preload-engines=['xkb:us::eng', 'xkb:gr::ell', 'xkb:se::swe']
 version='1.5.17'
 
 [general/hotkey]
