@@ -29,7 +29,12 @@ UXTerm.vt100.scrollbar.width: 6
 
 rofi.font: xft:Fira Code 12
 
-Xft.dpi: 90
+!Xft.dpi: 96
+!Xft.dpi: 144
+!Xft.dpi: 168
+!Xft.dpi: 180
+Xft.dpi: 192
+!Xft.dpi: 288
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
