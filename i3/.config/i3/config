@@ -42,7 +42,8 @@ bindsym $mod+Return exec tilix
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -fn 'DejaVu Sans Mono 8'
+# bindsym $mod+d exec dmenu_run -fn 'Consolas 8'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -53,6 +54,11 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
+#bindsym $mod+m focus left
+#bindsym $mod+n focus down
+#bindsym $mod+e focus up
+#bindsym $mod+i focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -65,6 +71,11 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+#bindsym $mod+Shift+m move left
+#bindsym $mod+Shift+n move down
+#bindsym $mod+Shift+e move up
+#bindsym $mod+Shift+i move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -150,11 +161,14 @@ bindsym $mod+Shift+a move container to workspace $ws12
 
 ## Screen Management
 
-set $s_builtin eDP1
-set $s_primary $s_builtin
-set $s_secondary $s_builtin
-set $s_primary DP2-1
-set $s_secondary DP2-2-1
+set $s_builtin eDP
+set $s_builtin primary
+set $s_primary primary
+set $s_secondary primary
+#set $s_primary $s_builtin
+#set $s_secondary $s_builtin
+#set $s_primary DP2-1
+#set $s_secondary DP2-2-1
 
 workspace $ws1 output $s_primary
 workspace $ws2 output $s_primary
@@ -174,9 +188,9 @@ exec_always i3-msg "workspace $ws3, move workspace to output $s_secondary"
 exec_always i3-msg "workspace $ws4, move workspace to output $s_primary"
 exec_always i3-msg "workspace $ws5, move workspace to output $s_primary"
 exec_always i3-msg "workspace $ws6, move workspace to output $s_builtin"
-exec_always i3-msg "workspace $ws7, move workspace to output $s_secondary"
+#exec_always sway-msg "workspace $ws7, move workspace to output $s_secondary"
 exec_always i3-msg "workspace $ws8, move workspace to output $s_secondary"
-exec_always i4-msg "workspace $ws9, move workspace to output $s_primary"
+exec_always i3-msg "workspace $ws9, move workspace to output $s_primary"
 exec_always i3-msg "workspace $ws10, move workspace to output $s_builtin"
 exec_always i3-msg "workspace $ws12, move workspace to output $s_secondary"
 
@@ -192,12 +206,11 @@ assign [class="Opera"] $ws6
 assign [class="ViberPC"] $ws6
 assign [class="Signal"] $ws6
 assign [class="Gnome-pomodoro"] $ws7
-assign [class="Thunderbird"] $ws8
+assign [class="thunderbird"] $ws8
 assign [class="VirtualBox"] $ws9
 
 for_window [class="^Spotify$"] border pixel 0
 for_window [class="^Spotify$"] move to workspace $ws10
-#for_window [class="^Spotify$"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -277,6 +290,7 @@ bindsym --release $mod+Print exec flameshot gui
 bindsym $mod+Shift+d exec ~/.screenlayout/smart-dock.sh 
 bindsym $mod+Mod1+F10 exec ~/.screenlayout/built-in-off.sh
 bindsym $mod+Mod1+F11 exec ~/.screenlayout/built-in-only.sh 
+bindsym $mod+Mod1+F12 exec xrandr --auto
 
 bindsym $mod+u exec tilix -e ~/tools/openSUSE-plug-n-play/updaters/update-all
 # apply background picture
@@ -287,13 +301,14 @@ exec nm-applet
 exec protonmail-bridge --noninteractive
 
 # fix tearing
-exec compton --backend glx --vsync opengl-mswc -b
+#exec compton --backend glx --vsync opengl-mswc -b
 
 # Startup programs
 exec dropbox start
 exec thunderbird
 exec sleep 10; spotify
 exec mattermost-desktop
+exec slack
 exec opera
 exec /opt/viber/Viber
 exec signal-desktop
@@ -331,6 +346,11 @@ bindsym Mod1+e exec nautilus ~
 # Screen bindings
 bindsym XF86MonBrightnessUp exec light -A 3
 bindsym XF86MonBrightnessDown exec light -U 3 
+bindsym $mod+Ctrl+k exec ~/.config/i3/ddc-increase
+bindsym $mod+Ctrl+j exec ~/.config/i3/ddc-decrease
+
+#bindsym $mod+i exec vlc --rate 1.3 'http://127.0.0.1:5002/api/tts?text=Our%20dedicated%20team.' 'http://127.0.0.1:5002/api/tts?text=complex'
+bindsym $mod+c exec ~/tools/tts
 
 # Audio
 bindsym $mod+s exec ~/.config/i3/spotify-selector
@@ -354,7 +374,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer $audio_device set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer $audio_device set Master 2dB- unmute
-#bindsym XF86AudioMute exec --no-startup-id "amixer -q $audio_device set Master toggle && amixer $audio_device set Speaker+LO 100% && amixer $audio_device set Headphone 100% && amixer $audio_device set Headphone on"
+# bindsym XF86AudioMute exec --no-startup-id "amixer -q $audio_device set Master toggle && amixer $audio_device set Speaker+LO 100% && amixer $audio_device set Headphone 100% && amixer $audio_device set Headphone on"
 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+# bindsym $mod+h exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle

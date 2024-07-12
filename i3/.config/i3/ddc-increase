@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ddcutil -d 1 setvcp 10 $(expr $(ddcutil -d 1 --brief getvcp 10 | cut -d ' ' -f4) + 5)
