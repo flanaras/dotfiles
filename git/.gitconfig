@@ -1,32 +1,32 @@
 [alias]
-	network = log --all --graph --decorate --oneline
-	nn = log master HEAD --graph --decorate --oneline
-	n = log --all --graph --decorate --oneline
-	fa = fetch --all
-	fo = fetch origin
-	fu = fetch upstream
-	pum = pull upstream master
-	ppm = "!f() { git pum && git push origin master; }; f"
-	cm = commit -m
-	s = status
-	a = add
-	aa = add .
-	ai = add -i
-	co = checkout
-	db = branch -d
-	d = diff
-	rpou = remote prune origin upstream
+    network = log --all --graph --decorate --oneline
+    nn = log master HEAD --graph --decorate --oneline
+    n = log --all --graph --decorate --oneline
+    fa = fetch --all
+    fo = fetch origin
+    fu = fetch upstream
+    pum = pull upstream master
+    ppm = "!f() { git pum && git push origin master; }; f"
+    cm = commit -m
+    s = status
+    a = add
+    aa = add .
+    ai = add -i
+    co = checkout
+    db = branch -d
+    d = diff
+    rpou = remote prune origin upstream
     rs = restore --staged
     b = blame
 [commit]
-	verbose = true
+    verbose = true
     template = ~/.gitmessage
 [core]
-	hooksPath = ~/.githooks/
+    hooksPath = ~/.githooks/
 
 [core]
     pager = delta --light
-	editor = vi
+    editor = vi
 
 [interactive]
     diffFilter = delta --color-only --light
@@ -55,4 +55,4 @@
 ;[interactive]
     ;diffFilter = delta --color-only
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
