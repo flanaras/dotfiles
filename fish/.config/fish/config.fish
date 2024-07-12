@@ -11,3 +11,18 @@ funcsave fish_greeting
 set -x FORGIT_GI_REPO_LOCAL $HOME/tools/gitignore
 set -x FORGIT_GI_TEMPLATES $HOME/tools/gitignore/templates
 set -x FORGIT_COPY_CMD 'xclip -i -sel p -f | xclip -i -sel c'
+
+set --erase SSH_AUTH_SOCK
+
+# https://rabexc.org/posts/pitfalls-of-ssh-agents
+ssh-add -l &>/dev/null
+if test $status -eq 2
+  test -r ~/.ssh-agent && eval (cat ~/.ssh-agent) >/dev/null
+
+  ssh-add -l &>/dev/null
+  if test $status -eq 2
+    umask 066; ssh-agent -c -t 3600 > ~/.ssh-agent
+    eval (cat ~/.ssh-agent) >/dev/null
+    #ssh-add
+  end
+end

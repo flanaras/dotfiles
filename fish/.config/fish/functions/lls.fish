@@ -1,3 +1,3 @@
-function lls
-    ls -l --color=auto -h $argv
+function ls
+    /usr/bin/ls -l --color=auto -h $argv
 end

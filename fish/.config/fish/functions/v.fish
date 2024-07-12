@@ -1,3 +1,4 @@
 function v
-	 nvim $argv
+	 #nvim $argv
+	 vi $argv
 end

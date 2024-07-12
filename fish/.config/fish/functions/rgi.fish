@@ -1,3 +1,3 @@
 function rgi
-	rg --color=always -i $argv
+	rg -L -g '*' --color=always -i $argv
 end

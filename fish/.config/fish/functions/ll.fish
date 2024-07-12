@@ -1,3 +1,3 @@
-function ll
-    lls -tr $argv
+function l
+    ls -tr $argv
 end
