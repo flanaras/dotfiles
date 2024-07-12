@@ -1,0 +1,438 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+input type:keyboard {
+    xkb_layout us,gr
+    #xkb_options grp:alt_shift_toggle
+    xkb_options grp:alt_space_toggle
+    #xkb_options grp:rshift_toggle
+}
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term alacritty --config-file /etc/alacritty/alacritty.yml
+set $term tilix
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# it is set in config.d/50-openSUSE.conf
+
+
+# todo
+font xft:Inconsolata 8
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/flanaras/Documents/bg.jpg fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+# setup local
+output 'Dell Inc. DELL P2721Q 989XLK3' enable scale 2.0 position 0,0 transform 270
+output 'Dell Inc. DELL P2721Q 7LWVTF3' enable scale 2.0 position 1080,0 transform 0
+# setup office
+output 'Dell Inc. DELL U2715H GH85D71K304S' enable scale 1.0 position 0,0 transform 90
+output 'Dell Inc. DELL U2723QE C56F2H3' enable scale 2.0 position 1440,0 transform 0
+# setup remote 
+#output eDP-1 enable scale 2.0 position 0,0
+output 'Dell Inc. DELL S2722QC 16F4MD3' enable scale 2.0 position 1920,0 transform 0
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $$term
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    #bindsym $mod+1 workspace number 1
+    #bindsym $mod+2 workspace number 2
+    #bindsym $mod+3 workspace number 3
+    #bindsym $mod+4 workspace number 4
+    #bindsym $mod+5 workspace number 5
+    #bindsym $mod+6 workspace number 6
+    #bindsym $mod+7 workspace number 7
+    #bindsym $mod+8 workspace number 8
+    #bindsym $mod+9 workspace number 9
+    #bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    #bindsym $mod+Shift+1 move container to workspace number 1
+    #bindsym $mod+Shift+2 move container to workspace number 2
+    #bindsym $mod+Shift+3 move container to workspace number 3
+    #bindsym $mod+Shift+4 move container to workspace number 4
+    #bindsym $mod+Shift+5 move container to workspace number 5
+    #bindsym $mod+Shift+6 move container to workspace number 6
+    #bindsym $mod+Shift+7 move container to workspace number 7
+    #bindsym $mod+Shift+8 move container to workspace number 8
+    #bindsym $mod+Shift+9 move container to workspace number 9
+    #bindsym $mod+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+    set $ws1 1
+    set $ws2 2
+    set $ws3 3
+    set $ws4 4
+    set $ws5 5
+    set $ws6 6
+    set $ws7 7
+    set $ws8 8
+    set $ws9 9
+    set $ws10 10
+    set $ws12 12
+
+    set $ws1 "1: "
+    set $ws2 "2: "
+    set $ws4 "4: "
+    set $ws6 "6: "
+    set $ws8 "8: "
+    set $ws9 "9: "
+    set $ws10 "10: "
+    set $ws12 "12: "
+
+    # switch to workspace
+    bindsym $mod+1 workspace $ws1
+    bindsym $mod+2 workspace $ws2
+    bindsym $mod+3 workspace $ws3
+    bindsym $mod+4 workspace $ws4
+    bindsym $mod+5 workspace $ws5
+    bindsym $mod+6 workspace $ws6
+    bindsym $mod+7 workspace $ws7
+    bindsym $mod+8 workspace $ws8
+    bindsym $mod+9 workspace $ws9
+    bindsym $mod+0 workspace $ws10
+    bindsym $mod+Tab workspace $ws10
+    bindsym $mod+a workspace $ws12
+
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace $ws1
+    bindsym $mod+Shift+2 move container to workspace $ws2
+    bindsym $mod+Shift+3 move container to workspace $ws3
+    bindsym $mod+Shift+4 move container to workspace $ws4
+    bindsym $mod+Shift+5 move container to workspace $ws5
+    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+Shift+7 move container to workspace $ws7
+    bindsym $mod+Shift+8 move container to workspace $ws8
+    bindsym $mod+Shift+9 move container to workspace $ws9
+    bindsym $mod+Shift+0 move container to workspace $ws10
+    bindsym $mod+Shift+Tab move container to workspace $ws10
+    bindsym $mod+Shift+a move container to workspace $ws12
+
+## Screen Management
+
+set $s_builtin eDP-1
+set $s_builtin primary
+set $s_primary DP-6
+set $s_primary DP-8
+set $s_primary DP-9
+set $s_primary DP-7
+set $s_primary DP-5
+set $s_primary DP-1
+set $s_primary DP-2
+set $s_secondary $s_primary
+#set $s_primary $s_builtin
+#set $s_secondary $s_builtin
+#set $s_primary DP2-1
+#set $s_secondary DP2-2-1
+
+workspace $ws1 output $s_primary
+workspace $ws2 output $s_primary
+workspace $ws3 output $s_secondary
+workspace $ws4 output $s_primary
+workspace $ws5 output $s_primary
+workspace $ws6 output $s_builtin
+workspace $ws7 output $s_secondary
+workspace $ws8 output $s_secondary 
+workspace $ws9 output $s_primary
+workspace $ws10 output $s_builtin
+workspace $ws12 output $s_secondary
+
+exec_always swaymsg "workspace $ws1, move workspace to output $s_primary"
+exec_always swaymsg "workspace $ws2, move workspace to output $s_primary"
+exec_always swaymsg "workspace $ws3, move workspace to output $s_secondary"
+exec_always swaymsg "workspace $ws4, move workspace to output $s_primary"
+exec_always swaymsg "workspace $ws5, move workspace to output $s_primary"
+exec_always swaymsg "workspace $ws6, move workspace to output $s_builtin"
+# exec_always swaymsg "workspace $ws7, move workspace to output $s_secondary"
+exec_always swaymsg "workspace $ws8, move workspace to output $s_secondary"
+exec_always swaymsg "workspace $ws9, move workspace to output $s_primary"
+exec_always swaymsg "workspace $ws10, move workspace to output $s_builtin"
+exec_always swaymsg "workspace $ws12, move workspace to output $s_secondary"
+
+for_window [class="^.*"] border pixel 1
+
+assign [app_id="firefox$"] $ws2
+assign [class="Navigator"] $ws2
+assign [app_id="Mattermost"] $ws3
+assign [class="Slack"] $ws3
+assign [class="jetbrains*"] $ws4
+assign [app_id="google-chrome"] $ws5
+assign [app_id="DBeaver"] $ws5
+assign [title=".*Opera"] $ws6
+assign [class="ViberPC"] $ws6
+assign [app_id="signal"] $ws6
+assign [class="Gnome-pomodoro"] $ws7
+assign [app_id="thunderbird"] $ws8
+assign [class="Mail"] $ws8
+assign [class="VirtualBox"] $ws9
+assign [title="Spotify"] $ws10
+assign [app_id="firefox-aurora"] $ws12
+
+seat seat0 xcursor_theme Adwaita
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    #bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    #bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+# it is set in config.d/50-openSUSE.conf
+#bar {
+#    position top
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+#}
+
+bindsym $mod+Shift+x exec systemctl suspend
+# bindsym $mod+Shift+z exec ~/.config/i3/locker
+bindsym $mod+Mod1+r exec systemctl reboot
+bindsym $mod+Mod1+s exec systemctl suspend
+bindsym $mod+Mod1+p exec systemctl poweroff
+# bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
+# bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/'
+bindsym --release $mod+Print exec --no-startup-id flameshot gui
+# bindsym --release $mod+Print exec --no-startup-id wayshot -s "$(slurp)" --stdout | wl-copy
+# bindsym $mod+Shift+d exec ~/.screenlayout/smart-dock.sh 
+bindsym $mod+Mod1+F10 exec swaymsg output eDP-1 disable
+bindsym $mod+Mod1+F11 exec bash -c "swaymsg output \* disable; swaymsg output eDP-1 enable"
+bindsym $mod+Mod1+F12 exec swaymsg output \* enable
+
+bindsym $mod+u exec tilix -e ~/tools/openSUSE-plug-n-play/updaters/update-all
+
+exec_always xfce4-power-manager --no-daemon --restart
+exec nm-applet --indicator
+exec protonmail-bridge --noninteractive
+
+# Startup programs
+exec dropbox start
+exec thunderbird
+exec sleep 10; wspotify
+exec ~/bin/wmattermost-desktop
+#exec wslack
+exec opera
+#exec /opt/viber/Viber
+exec signal-desktop
+
+# disable beep sound
+# exec_always xset -b
+# exec_always xset -dpms
+# exec_always xset s off
+
+# exec_always "dconf reset -f /desktop/ibus/ && dconf load /desktop/ibus/ < ~/.config/i3/ibus.dump"
+
+# fix docker failing to resolve dns of first execution
+exec docker pull alpine
+
+# Open nautilus
+set $filter perl -pe 's/a/a/g; s/[^[:ascii:]]/ /g;' | sed -r 's/<[^<]*>/ /g; s/http[s]\?:\/\/[^\w]*/url/g; s/&nbsp;/ /g'
+bindsym Mod1+e exec nautilus ~
+bindsym Mod1+j exec sh -c "wl-paste -p -t TEXT | sed 's/http.\?[\w]*/ /' > /home/flanaras/test/clipboard"
+#bindsym $mod+i exec sh -c "wl-paste -p -t TEXT | sed 's/http.\?[\w]*/ /' > /home/flanaras/test/clipboard"
+#bindsym $mod+o exec sh -c "wl-paste -t TEXT | sed 's/http.\?[\w]*/ /' > /home/flanaras/test/clipboard"
+#bindsym $mod+i exec sh -c "wl-paste -p | $filter > /home/flanaras/test/clipboard"
+bindsym $mod+o exec sh -c "wl-paste | $filter > /home/flanaras/test/clipboard"
+bindsym $mod+i exec sh -c "wl-paste -p | perl -pe \\\"s/’/'/g; s/[^[:ascii:]]/ /g;\\\" | sed -r 's/<[^<]*>/ /g; s/http[s]\?:\/\/[^\w]*/url/g; s/&nbsp;/ /g' > /home/flanaras/test/clipboard"
+
+# Screen bindings
+#bindsym XF86MonBrightnessUp exec light -A 3
+#bindsym XF86MonBrightnessDown exec light -U 3 
+bindsym $mod+Ctrl+k exec ~/.config/i3/ddc-increase
+bindsym $mod+Ctrl+j exec ~/.config/i3/ddc-decrease
+
+#bindsym $mod+i exec vlc --rate 1.3 'http://127.0.0.1:5002/api/tts?text=Our%20dedicated%20team.' 'http://127.0.0.1:5002/api/tts?text=complex'
+#bindsym $mod+c exec ~/tools/tts
+
+# Audio
+bindsym $mod+s exec ~/.config/i3/spotify-selector
+#bindsym $mod+o exec ~/.config/i3/music-selector
+
+set $audio_device -D default
+#set $audio_device -c 1
+
+bindsym $mod+F1 exec playerctl play
+bindsym $mod+F2 exec playerctl pause
+bindsym $mod+F9 exec --no-startup-id amixer $audio_device set Master 2dB- unmute
+bindsym $mod+F10 exec --no-startup-id amixer $audio_device set Master 2dB+ unmute
+bindsym $mod+F11 exec playerctl previous
+bindsym $mod+F12 exec playerctl next
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+
+
+#bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
+#bindsym XF86AudioRaiseVolume exec --no-startup-id amixer $audio_device set Master 2dB+ unmute
+#bindsym XF86AudioLowerVolume exec --no-startup-id amixer $audio_device set Master 2dB- unmute
+
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym $mod+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# include /etc/sway/config.d/*.conf
+include ~/.config/sway/config.d/*
