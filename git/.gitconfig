@@ -1,5 +1,6 @@
 [alias]
 	network = log --all --graph --decorate --oneline
+	nn = log master HEAD --graph --decorate --oneline
 	n = log --all --graph --decorate --oneline
 	fa = fetch --all
 	fo = fetch origin
@@ -15,8 +16,43 @@
 	db = branch -d
 	d = diff
 	rpou = remote prune origin upstream
+    rs = restore --staged
+    b = blame
 [commit]
 	verbose = true
     template = ~/.gitmessage
 [core]
 	hooksPath = ~/.githooks/
+
+[core]
+    pager = delta --light
+	editor = vi
+
+[interactive]
+    diffFilter = delta --color-only --light
+
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+[diff "sopsdiffer"]
+    textconv = sops -d
+;[pager]
+    ;diff = delta
+    ;log = delta
+    ;reflog = delta
+    ;show = delta
+
+;[delta]
+    ;syntax-theme = Solarized (light)
+    ;;navigate = true
+    ;side-by-side = true
+
+;[interactive]
+    ;diffFilter = delta --color-only
+[push]
+	autoSetupRemote = true

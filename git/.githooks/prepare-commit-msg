@@ -36,6 +36,6 @@ fi
 # Add story to commit in attempt to make it good
 echo "Prepending branch information \"$STORY\"..."
 echo "Message Type: $MSG_TYPE"
-echo "$STORY: $FILE_CONTENT" > $MSG_FILE
+echo "$STORY $FILE_CONTENT" > $MSG_FILE
 
 exit 0
