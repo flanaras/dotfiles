@@ -5,14 +5,14 @@ function rgi {
 }
 
 screens=`xrandr -q | rgi connected | cut -d " " -f 1`
-built_in=eDP1
+built_in=eDP
 
 cmd=''
 
 for current in  $screens
 do
 	if [ "$built_in" == "$current" ]; then
-		xrandr --output eDP1 --mode 1920x1080
+		xrandr --output $built_in --mode 3840x2160
 		continue
 	fi
 	
