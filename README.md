@@ -12,6 +12,10 @@ stow -t ~/ folder-to-deploy
 
 Assuming that dotfiles' parent is not ~/
 
+Important note: If the folder is not present in the destination folder, then
+folder gets symlinked instead of the contents.
+This is useful for sway, i3, etc., but not fish.
+
 ## Vim specific
 
 User information is not present in the gitconfig.
